@@ -47,7 +47,7 @@ http://localhost:3000/does/not/exist
 
 ## Available Scripts
 
-In the project directory, you can run:
+Before any script below, please run `npm install` first to install the node_modules
 ### `npm start`
 
 Runs the app in the development mode.\

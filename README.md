@@ -1,11 +1,53 @@
-# Getting Started with Create React App
+# GitHub Commit Feed 
+A browser app that loads commits from a GitHub repository and display them in a table (similar to a Twitter feed).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technical Details
+- React Hooks
+- React Router v6
+- Typescript
+- GitHub Rest API
+
+## Features
+The URLs determine which GitHub repository’s commits are shown.
+
+http://localhost:3000/crystalmaro/eyessee
+  - Displays commits for https://github.com/crystalmaro/eyessee
+  - The table of commits include:
+    - Date of commit
+    - Message of commit which is also an URL to commit
+    - Author of commit
+  - Initially, it loads at most 30 commits
+  - If there are more commits to load, there will be a "Load More" button at the bottom of the page
+
+http://localhost:3000
+  - The root path with a form that has two input fields and a submit button
+  - One input for entering the Github user/org and the other for entering the repo name
+  - Submitting the form should take you to the commit list page (above) for that repository
+
+http://localhost:3000/does/not/exist
+  - The path users are redirected to when a repo doesn’t exist, which doesn't display any commits and have a button to go back to the home/search page
+
+## Testing
+Since we're using the default test from create-react-app with React Router, we'll wrap a `MemoryRouter` around the component we want to test against. MemoryRouter works when you don't need access to the history object itself in the test, but just need the components to be able to render and navigate.
+
+## Images
+http://localhost:3000
+
+<img src="https://user-images.githubusercontent.com/30251553/155826019-5eff5ef3-7ca5-4079-8a40-fc6199edda16.png" width="300">
+
+http://localhost:3000/crystalmaro/eyessee
+
+<img src="https://user-images.githubusercontent.com/30251553/155825783-d3e66b32-ad5e-4583-9b9d-28a4bae59352.png" width="500">
+<img src="https://user-images.githubusercontent.com/30251553/155826158-c528f2f0-3260-4d95-8baa-d27f13d5bd4e.png" width="500">
+
+http://localhost:3000/does/not/exist
+
+<img src="https://user-images.githubusercontent.com/30251553/155825907-e7fd41d9-ebeb-4ced-8b87-019d9a6fd3e4.png" width="300">
+
 
 ## Available Scripts
 
 In the project directory, you can run:
-
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -23,24 +65,3 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
